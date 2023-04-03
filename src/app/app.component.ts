@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Client_IPKP';
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
+  //title = 'Client_IPKP';
+  @ViewChild('sidenav', {static:true}) sidenav!: MatSidenav;
+
+  toggleSidenav(){
+    this.sidenav.toggle();
+  }
 }
